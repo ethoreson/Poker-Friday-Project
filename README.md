@@ -2,6 +2,23 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
 
+## Firebase setup instructions
+
+* Create a firebase account, then select 'add firebase to you web app'.
+* run the following in the command line:
+* npm install angularfire2@4.0.0-rc.0 firebase --save
+* include "types": [ "firebase" ] in your tsconfig.json file
+* create a file in src/app called api-keys.ts. insert the following, replacing the values with the ones given to you from firebase:
+* export var masterFirebaseConfig = {
+  apiKey: "AIzaSyAhOnFGeUwA2ifEkTG-LY6spmHH32xcFig",
+  authDomain: "poker-night-a3c0f.firebaseapp.com",
+  databaseURL: "https://poker-night-a3c0f.firebaseio.com",
+  storageBucket: ""poker-night-a3c0f.appspot.com",
+  messagingSenderId: "231995991569"
+}
+
+
+
 ## About
 
 Created by Emilie Thoreson, as a Friday independent project. The Poker Night web app lists members of a poker group, along with stats for each player.
