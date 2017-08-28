@@ -1,5 +1,5 @@
 <div>
-  <h2>Name: {{personToDisplay.name}}</h2>
-  <h3>Net win/loss:  ${{personToDisplay.netWinLoss}}</h3>
-  <h4>Their best winning hand: {{personToDisplay.bestHand}}</h4>
+  <h2>Name: {{(personToDisplay | async).name}}</h2>
+  <h3>Net win/loss:  ${{(personToDisplay | async).netWinLoss}}</h3>
+  <h4>Their best winning hand: {{(personToDisplay | async).bestHand}}</h4>
 </div>

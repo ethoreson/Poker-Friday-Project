@@ -1,0 +1,16 @@
+<h3>New Member</h3>
+<div>
+  <div>
+    <label>Name:</label>
+    <input #newName>
+  </div>
+  <div>
+    <label>Net Win/Loss:</label>
+    <input #newNetWinLoss>
+  </div>
+  <div>
+    <label>Best Hand:</label>
+    <input #newBestHand>
+  </div>
+  <button (click)="submitForm(newName.value, newNetWinLoss.value, newBestHand.value); newName.value=''; newNetWinLoss.value=''; newBestHand.value=''">Add</button>
+</div>

@@ -2,11 +2,9 @@
   "name": "Mike",
   "netWinLoss": 4,
   "bestHand": "flush",
-  "id": 1
   }, {
     "name": "Yasie",
     "netWinLoss": -2,
     "bestHand": "3 of a kind - 9s",
-    "id": 2
   }]
 }

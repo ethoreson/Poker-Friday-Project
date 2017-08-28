@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Person } from '../person.model';
 import { Router } from '@angular/router';
 import { PersonService } from '../person.service';
+import { FirebaseListObservable } from 'angularfire2/database';
 
 @Component({
   selector: 'app-members',
@@ -10,7 +11,7 @@ import { PersonService } from '../person.service';
   providers: [PersonService]
 })
 export class MembersComponent implements OnInit {
-  people: Person[];
+  people: FirebaseListObservable<any[]>;
 
   constructor(private router: Router, private personService: PersonService) {}
 
@@ -18,7 +19,7 @@ export class MembersComponent implements OnInit {
     this.people = this.personService.getPeople();
   }
 
-  goToStatsPage(clickedPerson: Person) {
-    this.router.navigate(['people', clickedPerson.id]);
-  };
+ goToStatsPage(clickedPerson) {
+     this.router.navigate(['people', clickedPerson.$key]);
+ };
 }

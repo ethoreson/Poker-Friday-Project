@@ -1,22 +1,25 @@
 import { Injectable } from '@angular/core';
 import { Person } from './person.model';
-import { PEOPLE } from './mock-people';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
 @Injectable()
 export class PersonService {
+  people: FirebaseListObservable<any[]>;
 
-  constructor() { }
+  constructor(private database: AngularFireDatabase) {
+    this.people = database.list('people');
+  }
 
   getPeople() {
-    return PEOPLE;
+    return this.people;
   }
 
-  getPersonById(personId: number){
-    for (var i = 0; i <= PEOPLE.length - 1; i++) {
-      if (PEOPLE[i].id === personId) {
-        return PEOPLE[i];
-      }
-    }
+  addPerson(newPerson) {
+    this.people.push(newPerson);
   }
+
+ getPersonById(personId: string){
+   return this.database.object('people/' + personId);
+ }
 
 }
