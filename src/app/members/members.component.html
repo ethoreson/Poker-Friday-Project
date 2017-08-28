@@ -1,7 +1,12 @@
 <h1>Members</h1>
 
-<div *ngFor="let person of people | async" (click)="goToStatsPage(person)" class="panel panel-default">
+<div *ngFor="let person of people | async" class="panel panel-default">
   <div class="panel-body">
-    <h3><em>{{person.name}}</em></h3>
+    <h3 (click)="goToStatsPage(person)"><em>{{person.name}}</em></h3>
+    <div *ngIf="currentRoute === '/admin'">
+      {{person.name}}
+      <hr>
+      <app-edit-person [selectedPerson]="person"></app-edit-person>
+    </div>
   </div>
 </div>

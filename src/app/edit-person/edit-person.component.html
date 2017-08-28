@@ -1,0 +1,15 @@
+<h2>Edit Person</h2>
+
+<label>Edit Person's Name:</label>
+<input [(ngModel)]="selectedPerson.name">
+<br>
+
+<label>Edit Person's Net Win/Loss:</label>
+<input [(ngModel)]="selectedPerson.netWinLoss">
+<br>
+
+<label>Edit Person's Best Winning Hand:</label>
+<input [(ngModel)]="selectedPerson.bestHand">
+<br>
+
+<button (click)="beginUpdatingPerson(selectedPerson)">Update</button>

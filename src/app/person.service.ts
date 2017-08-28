@@ -19,7 +19,12 @@ export class PersonService {
   }
 
  getPersonById(personId: string){
-   return this.database.object('people/' + personId);
+   return this.database.object('/people/' + personId);
+ }
+
+ updatePerson(localUpdatedPerson){
+   var personEntryInFirebase = this.getPersonById(localUpdatedPerson.$key);
+   personEntryInFirebase.update({name: localUpdatedPerson.name, netWinLoss: localUpdatedPerson.netWinLoss, bestHand: localUpdatedPerson.bestHand});
  }
 
 }
