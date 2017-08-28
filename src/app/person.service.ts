@@ -27,4 +27,9 @@ export class PersonService {
    personEntryInFirebase.update({name: localUpdatedPerson.name, netWinLoss: localUpdatedPerson.netWinLoss, bestHand: localUpdatedPerson.bestHand});
  }
 
+ deletePerson(localPersonToDelete){
+   var personEntryInFirebase = this.getPersonById(localPersonToDelete.$key);
+   personEntryInFirebase.remove();
+ }
+
 }

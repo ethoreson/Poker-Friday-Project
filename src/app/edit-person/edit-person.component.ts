@@ -21,4 +21,8 @@ export class EditPersonComponent implements OnInit {
     this.personService.updatePerson(personToUpdate);
   }
 
+  beginDeletingPerson(personToDelete){
+    this.personService.deletePerson(personToDelete);
+  }
+
 }
